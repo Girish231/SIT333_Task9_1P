@@ -66,4 +66,14 @@ public class OnTrackTest {
 		String output = result.taskStatus("SIT333P6", now);
 		assertEquals("More than 24 hours left. Keep working.", output);
 	}
+	
+	@Test
+	public void testUnimplementedFeature() {
+	    // This method does not exist in OnTrackTaskSubmit (yet)
+	    int count = result.getTaskCount();
+	    assertEquals(0, count);
+	}
+	
+	
+
 }

@@ -28,7 +28,11 @@ public class OnTrackTaskSubmit {
 		}
 		return null;
 	}
-		
+	
+	public int getTaskCount() {
+	    return tasks.size();
+	}
+
 	public String taskStatus(String taskId, LocalDateTime currentTime) {
 		Task task = taskFind(taskId);
 		if (task == null) {
