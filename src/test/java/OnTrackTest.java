@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 public class OnTrackTest {
 	
 	private OnTrackTaskSubmit result;
+	
 	private LocalDateTime now;
 	
 	@Before
@@ -15,7 +16,7 @@ public class OnTrackTest {
 		result = new OnTrackTaskSubmit();
 		now = LocalDateTime.of(2025, 4, 30, 10, 0);
 	}
-	
+
 	@Test
 	public void testSubmitaTask() {
 		result.taskSubmit("SIT333P1", "s222121587", now.plusDays(1));
