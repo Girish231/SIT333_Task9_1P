@@ -25,3 +25,16 @@ jobs:
 
     - name: Run tests
       run: mvn test
+
+    - name: Send failure email notification
+      if: failure()
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.office365.com
+        server_port: 587
+        username: ${{ secrets.SMTP_USER }}
+        password: ${{ secrets.SMTP_PASS }}
+        subject: GitHub Actions CI Job Failed
+        to: s222121587@deakin.edu.au
+        from: GitHub Actions <s222121587@deakin.edu.au>
+        body: The GitHub Actions CI job failed. Please check the logs.
